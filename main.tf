@@ -20,21 +20,21 @@ resource "aws_wafregional_sql_injection_match_set" "owasp_01_sql_injection_set" 
 
   name = "${lower(var.service_name)}-owasp-01-detect-sql-injection-${random_id.this.0.hex}"
 
-  sql_injection_match_tuple {
-    text_transformation = "URL_DECODE"
+  # sql_injection_match_tuple {
+  #   text_transformation = "URL_DECODE"
 
-    field_to_match {
-      type = "URI"
-    }
-  }
+  #   field_to_match {
+  #     type = "URI"
+  #   }
+  # }
 
-  sql_injection_match_tuple {
-    text_transformation = "HTML_ENTITY_DECODE"
+  # sql_injection_match_tuple {
+  #   text_transformation = "HTML_ENTITY_DECODE"
 
-    field_to_match {
-      type = "URI"
-    }
-  }
+  #   field_to_match {
+  #     type = "URI"
+  #   }
+  # }
 
   sql_injection_match_tuple {
     text_transformation = "URL_DECODE"
